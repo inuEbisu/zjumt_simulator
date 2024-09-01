@@ -1,3 +1,0 @@
-如果有 Python 环境，那么直接双击 main.py
-没反应的话运行 dist 文件夹下的 zjumt_simulator_alpha_1.exe。
-exe 用 pyinstall 打包，可能报毒，是误报，在下没这么缺德
