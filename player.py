@@ -43,8 +43,9 @@ class Player:
 
     def print_stat(self):
         _stat = f"姓名: {self.name}   生命: {self.health}/100   疾病: {self.disname}\n心情: {self.mood}/100   理智: {self.san}/100   精力: {self.eng}/100"
+        # 允许分数爆表，但显示时上限为 100
         if m.debug:
-            _stat += f"\n智力：{self.iq}   情商：{self.eq}   体能：{self.st}   分数：{self.score}   疾病：{self.dis}"
+            _stat += f"\n智力：{self.iq}   情商：{self.eq}   体能：{self.st}   分数：{min(self.score, 100)}   疾病：{self.dis}"
         print(_stat)
 
     def do_task(self, task: t.Task):
@@ -57,8 +58,9 @@ class Player:
         self.iq += task.iq
         self.eq += task.eq
         self.st += task.st
-        # self.score += task.score
-        self.score = min(self.score + task.score, 100)
+
+        self.score += task.score
+        # self.score = min(self.score + task.score, 100)
 
         if task.risk:
             rid = r.choices(task.risk[0], task.risk[1])[0]

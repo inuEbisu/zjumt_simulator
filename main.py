@@ -10,6 +10,8 @@ m.cls()
 player = p.Player(0, 0, 0, 0)
 
 name = input("你的名字是: ")
+if name == "": name = "无名氏"
+
 namel = name.lower()
 
 m.cls()
@@ -171,6 +173,7 @@ while timestamp <= e.s(21, 7):
     m.cls()
     
     if player.health <= 0:
+        # Game Over
         print("你寄了！\n死因：", end="")
         if player.mood <= 0:
             print("玉玉紫砂")
@@ -181,10 +184,14 @@ while timestamp <= e.s(21, 7):
         break
 
 else:
+    # Win win win
+
+    if player.score > 100: player.score = 100
+
     print(
         f"{player.name} 圆满完成了 21 天的浙大军训。",
         f"得分：{player.score}",
-        f"绩点：{m.gp_calc(player.score)}"
+        f"绩点：{".".join(str(m.gp_calc(player.score)))}"
     )
 
 input("按回车键退出……")

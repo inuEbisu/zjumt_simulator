@@ -20,8 +20,8 @@ def print_time(ts):
     timetext = ["清晨", "早上", "正午", "下午", "傍晚", "晚上", "半夜"]
     print(f"第 {time[0]} 天，{timetext[time[1] - 1]}")
 
-if __name__ == "__main__":
-    print(s2t(int(input())))
+# if __name__ == "__main__":
+#     print(s2t(int(input())))
 
 class Event(t.Task):
     time_start = 0

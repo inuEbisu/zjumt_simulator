@@ -21,5 +21,5 @@ def judge(chance: int) -> bool:
     dice = r.randint(1, 100)
     return dice <= chance
 
-if __name__ == "__main__":
-    print(".".join(str(int(input("score: ")))))
+# if __name__ == "__main__":
+#     print(".".join(str(int(input("score: ")))))
